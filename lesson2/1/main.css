@@ -1,0 +1,16 @@
+.top{
+    background: aqua;
+    height: 200px;
+}
+.bottom{
+    display: flex;
+    height: 700px;
+}
+.B{
+background: aquamarine;
+    width: 80%;
+}
+.C{
+    background: cadetblue;
+    width: 20%;
+}

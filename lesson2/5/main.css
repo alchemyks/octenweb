@@ -1,0 +1,23 @@
+.parent_top{
+    display: flex;
+    height: 400px;
+}
+.child_top{
+    background: #2160b0;
+    margin: 5px;
+    width: 50%;
+}
+.centre{
+    background: #2160b0;
+    margin: 5px;
+    height: 200px;
+}
+.parent_bottom{
+    display: flex;
+    height: 200px;
+}
+.child_bottom{
+    margin: 5px;
+    width: 33%;
+    background: #173e6e;
+}

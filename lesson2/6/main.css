@@ -1,0 +1,56 @@
+.header{
+    height: 100px;
+    background: #54d5eb;
+    margin: 5px;
+}
+.content_holder{
+    display: flex;
+    height: 600px;
+}
+.left{
+    width: 40%;
+}
+.right{
+    width: 60%;
+}
+#hero{
+    height: 40%;
+    margin: 5px;
+    background: #d7c9e3;
+}
+#sibebar{
+    height: 60%;
+    margin: 5px;
+    background: #9fc363;
+}
+#main{
+    height: 70%;
+    margin: 5px;
+    background: #f5c632;
+}
+#extra{
+    height: 30%;
+    margin: 5px;
+    background: #898989;
+}
+.related{
+    display: flex;
+    height: 120px;
+}
+#image{
+    width: 70%;
+    margin: 5px;
+    background: #2bb673;
+}
+#post{
+    width: 30%;
+    margin: 5px;
+    background: #f3ccde;
+}
+.footer{
+    height: 100px;
+    margin: 5px;
+    background: #fea500;
+}
+
+

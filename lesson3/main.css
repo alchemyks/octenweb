@@ -1,0 +1,185 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.color_text {
+    color: mediumslateblue;
+}
+
+.bg_color {
+    background: mediumslateblue;
+}
+
+
+.font_size25 {
+    font-size: 25px;
+}
+
+.font_bold {
+    font-weight: bold;
+}
+
+.d_flex {
+    display: flex;
+}
+
+.w_1024 {
+    width: 1024px;
+}
+
+.pos_top_30px {
+    top: 30px;
+}
+
+.pos_left_100px {
+    left: 100px;
+}
+
+.pos_right_150px{
+    right: 180px;
+}
+
+.pos_right_100px {
+    right: 100px;
+}
+
+.color_content_top {
+    background: #0e2535;
+}
+
+.pos_absolute {
+    position: absolute;
+}
+
+.pos_relative {
+    position: relative;
+}
+
+.brdr_radius10 {
+    border-radius: 10px;
+}
+
+.square120 {
+    width: 120px;
+    height: 120px;
+}
+
+.content_holder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.menu {
+    height: 100px;
+    background: #8d949c;
+    border-start-start-radius: 100px;
+    border-start-end-radius: 100px;
+    position: relative;
+}
+
+.menu_box {
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+}
+
+.menu_line {
+    background: #6a66bb;
+    border-radius: 6px;
+    height: 5px;
+    margin: 5px;
+    width: 40px;
+}
+
+.content_top {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    position: relative;
+}
+
+.parent_middle_box {
+    bottom: -60px;
+}
+
+.middle_box {
+    align-content: space-between;
+    margin: 0 20px 0;
+}
+
+.content_top_centre_box {
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+
+.content {
+    background: #c2c9d3;
+    height: 600px;
+}
+
+.centre_text {
+    text-align: center;
+}
+
+.margin_top_100 {
+    margin-top: 120px;
+}
+
+.eight_square_holder {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 100px 0;
+}
+
+.square_text_holder {
+    flex-direction: column;
+    margin: 30px 30px 0;
+}
+
+.eight_square {
+    margin-bottom: 5px;
+}
+
+
+
+.rotated {
+    transform: rotate(60deg); /* Equal to rotateZ(45deg) */
+    background: #6a66bb;
+    height: 4px;
+    width: 20px;
+    border-radius: 5px;
+    right: 0;
+    bottom: 2px;
+
+}
+
+.outside{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #6a66bb;
+}
+
+.inside{
+    margin: 2px;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #8d949c;
+    z-index: 2;
+}
+
+.search{
+
+}
