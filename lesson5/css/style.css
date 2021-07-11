@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -366,3 +367,36 @@ footer > .about_us_column{
  .footer_bottom_right{
      margin-right: 0;
  }
+
+ .button_mobile{
+     display: none;
+     width: 60px;
+     height: 60px;
+     border: 1px solid #ccc;
+     justify-content: center;
+ }
+
+ .button_mobile span{
+     display: block;
+     width: 80%;
+     height: 5px;
+    background: #cccccc;
+     position: relative;
+ }
+
+.button_mobile span::before, .button_mobile span::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    position: absolute;
+}
+
+.button_mobile span::before{
+    top:-10px
+}
+
+.button_mobile span::after{
+    bottom: -10px;
+}
