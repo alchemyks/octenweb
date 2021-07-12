@@ -14,7 +14,7 @@
     .first_screen {
         padding-bottom: 50px;
         background: teal;
-        height: 100vh;
+        height: 570px;
         border-bottom: 0;
     }
 
@@ -51,8 +51,8 @@
 
     .best_finance_right {
         margin: 0;
-        padding-top: 70px;
-        height: 90vh;
+        padding-top: 50px;
+        height: 450px;
     }
 
     .best_finance_right h2 {
@@ -60,61 +60,144 @@
         line-height: 60px;
     }
 
-    .why_switch{
+    .why_switch {
         background-color: mediumslateblue;
-        height: 150vh;
+        height: 800px;
         flex-direction: column;
     }
-}
 
-.why_switch h2{
-    font-size: 50px;
-    line-height: 60px;
-    padding-top: 70px;
-}
+    .why_switch h2 {
+        font-size: 50px;
+        line-height: 60px;
+        padding-top: 50px;
+    }
 
-.why_switch .pictures{
-    display: none;
-}
+    .why_switch .pictures {
+        display: none;
+    }
 
-.why_switch_text_holder{
-    flex-direction: column;
-    align-items: center;
-}
+    .why_switch_text_holder {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.why_switch_text{
-    margin-top: 40px;
-}
+    .why_switch_text {
+        margin-top: 40px;
+    }
 
-.why_switch_button{
-    position: initial;
-    margin: 50px auto 0;
-}
+    .why_switch_button {
 
-.plans_build .pictures{
-    display: none;
-}
+        margin: 50px auto 0;
+    }
 
-.plans_build{
-    margin: 0;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    height: 180vh;
+    .plans_build .pictures {
+        display: none;
+    }
 
-}
+    .plans_build {
+        margin: 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        height: 950px;
 
-.plans_build h3{
-    font-size: 40px;
-    line-height: 60px;
-}
+    }
 
-.plans_build > h3{
-    font-size: 50px;
-    line-height: 50px;
-}
+    .plans_build h3 {
+        font-size: 40px;
+        line-height: 60px;
+    }
 
-.plans_build .why_switch_text h3{
-    font-size: 30px;
-    line-height: 60px;
+    .plans_build > h3 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .plans_build .why_switch_text h3 {
+        font-size: 30px;
+        line-height: 60px;
+    }
+
+    .logo {
+        flex-direction: column;
+    }
+
+    .logo_left p {
+        width: 236px;
+        padding-top: 50px;
+    }
+
+    .logo_right {
+        flex-direction: column;
+        margin: 50px 0;
+    }
+
+    .logo_column img {
+        margin: 10px;
+        height: 100px;
+    }
+
+    .ac_hub {
+        flex-direction: column;
+        background-color: antiquewhite;
+        height: 400px;
+    }
+
+    .ac_hub_left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ac_club_right {
+        display: none;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .ac_hub h3 {
+        margin-top: 50px;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .ac_hub_left button {
+        margin: 50px auto 0;
+    }
+
+    .ready_to_switch {
+        flex-direction: column;
+        margin: 0;
+        border-radius: 0;
+        height: 350px;
+    }
+    .ready_to_switch .left_side h3 {
+        margin-top: 50px;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .ready_to_switch .right_side{
+        display: flex;
+    }
+
+    .ready_to_switch .right_side button{
+        margin: 50px auto 0;
+
+    }
+
+    footer .logo_image{
+        display: none;
+    }
+
+    footer{
+        margin-top: 0;
+        height: 740px;
+    }
+
+    .footer_logo{
+        padding-top: 50px;
+    }
+    .about_us{
+        flex-wrap: wrap;
+    }
 }
