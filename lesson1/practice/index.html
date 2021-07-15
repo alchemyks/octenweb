@@ -81,25 +81,35 @@
     dC = 4
     v = 3.14 * Math.sqrt(dC/2) * height
     console.log(v + 'м.куб')
-
     /*
     6. У прямоугольного треугольника две стороны n (со значением 3) и m (со значением 4).
     Найдите гипотенузу k по теореме Пифагора (нужно использовать функцию Math.pow(число, степень) или оператор возведения в степень ** ).
+    */
+
+    let n = 3
+    let m = 4
+    let k = Math.pow((n ** 2 + m ** 2), 0.5)
+    console.log(k)
+
     /*
-
-
-
-    /*
-
-
     8. Вывести в окно браузера при помощи метода alert() следующие данные: Ваше ФИО, возраст, хобби (каждой на новой строки спомощью \n).
+    */
+    alert("Kosovskyi\nSerhii\nEvgenovych\n36\nРадиоэлектроника")
 
+    /*
     9. Создать 4 переменные с использованием ключевого слова let с именами str1, str2, str3, concatenation.
     Переменной str1 присвоить фразу ‘Кто ‘, str2 – ‘ты ‘, str3 – ‘такой?’
     Локальной переменной concatenation присвоить результат конкатенации 3-х строк: str1, str2, str3.
     Вывести в документ содержимое переменной concatenation спомощью document.write
-
+    */
+    let str1 = "Кто"
+    let str2 = "ты"
+    let str3 = "такой?"
+    let concatenation = `${str1} ${str2} ${str3}`
+    document.write(concatenation)
+    /*
     10. Подумайте Какие значения выведет в окно браузера следующий фрагмент кода?  и почему?
+
     let str = "20";
     let a = 5;
     document.write(str + a + "<br/>");
@@ -107,25 +117,34 @@
     document.write(str * "2" + "<br/>");
     document.write(str / 2 + "<br/>");
 
-
-
     13. С помощью окна ввода, вызываемого методом prompt, сделать сложение двух чисел, а вывод результата при помощи метода alert
+    */
+    alert(parseInt(prompt('Чсло 1')) + parseInt(prompt('Число 2')))
+
+    /*
+
+
     14. С помощью окна ввода, вызываемого методом prompt, пользователь последовательно выводит имя, фамилию и возраст, а вам не обходимо вывести строку такого вида
     Доброго вечера Иван Иванов, мои поздравления что вам 32 , а вывод результата при помощи метода alert
-
-
-
-    =====================
-    ======ДОП============
-    =====================
-
-
-
-
-    1. Три різних числа вводяться через prompt().
-    За допомоги if else вивести іх в порядку зростання. (відсортувати по зростанню)
-
     */
+
+    let name = prompt('Name:');
+    let surName = prompt('Surname:');
+    let age = prompt('Age:');
+    alert(`Доброго вечера ${name} ${surName}, мои поздравления что вам ${age}`);
+
+    /*
+        =====================
+        ======ДОП============
+        =====================
+
+
+
+
+        1. Три різних числа вводяться через prompt().
+        За допомоги if else вивести іх в порядку зростання. (відсортувати по зростанню)
+
+        */
 
     function sortThree(n1,n2,n3) {
         let min;
@@ -198,17 +217,29 @@
     Если светофор красный - и машины есть вывести "стой и жди".
     Если светофор в аварийном режиме вывести "делай что хочешь"!
     */
-    mode = prompt('Write color traffic light!\n red, yellow, green or error');
+    mode = prompt('Write color traffic light!\n red, yellow, green or error')
     isRoadClear = confirm('Road is free?');
     switch (mode) {
         case 'red':
-            console.log('стой');
+            if (isRoadClear){
+            console.log('стой все рано');
+            }else{
+                console.log('стой и жди');
+            }
             break;
         case 'yellow':
-            console.log('подожди');
+            if (isRoadClear){
+                console.log('стой все рано');
+            }else{
+                console.log('жди');
+            }
             break;
         case 'green':
-            console.log('иди');
+            if (isRoadClear){
+                console.log('иди');
+            }else{
+                console.log('иподожди пока нарушители проедут');
+            }
             break;
         default:
             console.log('делай что хочешь')
