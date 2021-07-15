@@ -169,7 +169,23 @@
     Если светофор желтый - вывести "подожди".
     Если светофор красный - вывести "стой".
     Если светофор в аварийном режиме вывести "делай что хочешь"!
+    */
+    let mode = prompt('Write color traffic light!\n red, yellow, green or error');
+    switch (mode) {
+        case 'red':
+            console.log('стой');
+            break;
+        case 'yellow':
+            console.log('подожди');
+            break;
+        case 'green':
+            console.log('иди');
+            break;
+        default:
+            console.log('делай что хочешь')
+    }
 
+    /*
     3
     Все параметры получаем с клавиатуры!!!!(prompt , confirm)
     Создать переменную isRoadClear которая характеризирует наличие на дороге машин.
@@ -182,6 +198,22 @@
     Если светофор красный - и машины есть вывести "стой и жди".
     Если светофор в аварийном режиме вывести "делай что хочешь"!
     */
+    mode = prompt('Write color traffic light!\n red, yellow, green or error');
+    isRoadClear = confirm('Road is free?');
+    switch (mode) {
+        case 'red':
+            console.log('стой');
+            break;
+        case 'yellow':
+            console.log('подожди');
+            break;
+        case 'green':
+            console.log('иди');
+            break;
+        default:
+            console.log('делай что хочешь')
+    }
+
     </script>
 </body>
 </html>
