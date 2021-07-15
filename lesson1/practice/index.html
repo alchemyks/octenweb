@@ -125,6 +125,43 @@
     1. Три різних числа вводяться через prompt().
     За допомоги if else вивести іх в порядку зростання. (відсортувати по зростанню)
 
+    */
+
+    function sortThree(n1,n2,n3) {
+        let min;
+        let mid;
+        let max;
+        if (n1 < n2) {
+            min = n1;
+            mid = n2;
+        } else {
+            min = n2;
+            mid = n1;
+        }
+        if (mid < n3) {
+            max = n3;
+        } else {
+            max = mid;
+            mid = n3;
+        }
+        if (min > n3) {
+            mid = min
+            min = n3
+        }
+        return(`${min} ${mid} ${max}`);
+    }
+    console.log(sortThree(1,2,3))
+    console.log(sortThree(2,3,1))
+    console.log(sortThree(3,1,2))
+    console.log(sortThree(2,1,3))
+    console.log(sortThree(1,3,2))
+    console.log(sortThree(3,2,1))
+    console.log(sortThree(1,1,1))
+    console.log(sortThree(1,2,2))
+    console.log(sortThree(2,2,1))
+    console.log(sortThree(3,1,3))
+
+    /*
     2.
     Все параматры получаем с клавиатуры!!!!
     Имитируем поведение пешехода на перекстке.
