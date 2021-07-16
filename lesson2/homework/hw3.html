@@ -271,31 +271,20 @@
         ];
 
 
-        <div className="users-box">
-            <div className="user-block">
-                <h2>ID - NAME - USERNAME </h2>
-                <h3>EMAIL - PHONE</h3>
-                <div className="address-block">
-                    <p>City - ADDRESS.CITY</p>
-                    <p>Street - ADDRESS.STREET</p>
-                    <p>Suite - ADDRESS.SUITE</p>
-                    <p>Zip code - ADDRESS.ZIPCODE</p>
-                </div>
-
-            </div>
-
-            <!--
-            ...
-            ...
-            ...
-            other users
-            -->
-
-
-        </div>
-
-
+        document.write('<div className="users-box" style="display: flex; flex-wrap: wrap; margin: 0 50px">')
+            for (const user of usersList) {
+                document.write(`<div className="user-block" style="width: 48%; border: 1px solid beige">
+                                    <h2>${user.id} - ${user.name} - ${user.username} </h2>
+                                    <h3>${user.email} - ${user.phone}</h3>
+                                    <div className="address-block" style="margin-left: 50px">
+                                        <p>City - ${user.address.city}</p>
+                                        <p>Street - ${user.address.street}</p>
+                                        <p>Suite - ${user.address.suite}</p>
+                                        <p>Zip code - ${user.address.zipcode}</p>
+                                    </div>
+                                </div>`)
+            }
+        document.write('</div>')
     </script>
-
 </body>
 </html>
