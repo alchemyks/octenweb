@@ -1,61 +1,236 @@
---створити масив з:
-- з 5 числових значень
-- з 5 стічкових значень
-- з 5 значень стрічкового, числового та булевого типу
-- та вивести його в консоль
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        --створити масив з:
+            - з 5 числових значень
+         */
+        let numArr1 = [1, 2, 3, 4, 5];
+        for (const number of numArr1) {
+            console.log(number);
+        }
+        /*
+        - з 5 стічкових значень
+         */
+        let  strArr1 = ['a', 'b', 'c', 'd', 'e'];
+        for (const strItem of strArr1) {
+            console.log(strItem);
+        }
+        /*
+        - з 5 значень стрічкового, числового та булевого типу
+         */
+        let samArr1 = ['a', 'true', true, 10, 20.9];
+        for (const samItem of samArr1) {
+            console.log(samItem);
+        }
+        /*
+        - та вивести його в консоль
+         */
+        /*
+        -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
+        */
+        let samArr2 = [];
+        samArr2[2] = 100;
+        samArr2[5] = true;
+        samArr2[6] = 'str';
+        for (const samItem of samArr2) {
+            console.log(samItem);
+        }
+        /*
+        - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
+        */
+        for (let i=0; i<10;i++){
+            document.write(`<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, vitae.</div>`);
+        }
 
--- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
+        /*
+        - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+        */
+        for (let i=1; i<=10; i++){
+            document.write(`<div>
+                                <h2>${i}</h2>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>`);
+        }
+        /*
+        - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+        */
+        let count1=20;
+        while (count1>0){
+            document.write('<h1>Lorem ipsum dolor sit amet.</h1>');
+            count1--;
+        }
+        /*
+        - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+        */
+        let count2 = 1;
+        while (count2 <= 20){
+            document.write(`<h1>${count2} Lorem ipsum dolor sit amet.</h1>`);
+            count2++;
+        }
+        /*
+        - Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
+        */
+        let numArr2 = [1,2,3,4,5,6,7,8,9,10];
+        for (const num of numArr2) {
+            console.log(num);
+        }
+        /*
+        - Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
+        */
+        let strArr2 = ['Lorem','big', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipisicing', 'elit', 'Minus'];
+        for (const str of strArr2) {
+            console.log(str);
+        }
+        /*
+        - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
+        */
+        let samArr3 = [1,2,3,4, true, 'wer', '3eww', 'true', 9, 10];
+        for (const samobj of samArr3) {
+            console.log(samobj);
+        }
+        /*
+        - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
+        */
+        let samArr4 = [1,2,3,4, true, 'wer', '3eww', 'true', true, 10];
+        for (const samItem of samArr4) {
+            if (typeof samItem === "boolean"){
+                console.log(samItem);
+            }
+        }
+        /*
+        - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
+        */
+        let samArr5 = [1,2,3,4, true, 'wer', '3eww', 'true', true, 10];
+        for (const samItem of samArr5) {
+            if (typeof samItem === "number"){
+                console.log(samItem);
+            }
+        }
+        /*
+        - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
+        */
+        let samArr6 = [1,2,3,4, true, 'wer', '3eww', 'true', true, 10];
+        for (const samItem of samArr6) {
+            if (typeof samItem === "string"){
+                console.log(samItem);
+            }
+        }
+        /*
+        - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+        */
+        let samArr7 = [];
+        samArr7[0] = 'qwe';
+        samArr7[1] = 12;
+        samArr7[2] = true;
+        samArr7[3] = 'sddfgdgdfgfdsg';
+        samArr7[4] = 23;
+        samArr7[5] = 123.34;
+        samArr7[6] = true;
+        samArr7[7] = 3;
+        samArr7[8] = 'dfgdgdg';
+        samArr7[9] = '10';
+        for (const samItem of samArr7) {
+            console.log(samItem);
+        }
+        /*
+        - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+        */
+        for (let i = 1; i<=10; i++){
+            document.write(`${i}`);
+            console.log(i);
+        }
+        /*
+        - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+        */
+        for (let i = 1; i<=100; i++){
+            document.write(`${i}`);
+            console.log(i);
+        }
+        /*
+        - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+        */
+        for (let i = 1; i<=100; i+=2){
+            document.write(`${i}`);
+            console.log(i);
+        }
+        /*
+        - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
+        */
+        for (let i = 1; i<=100; i++){
+            if (i % 2 === 0) {
+                document.write(`${i}`);
+                console.log(i);
+            }
+        }
+        /*
+        - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
+        */
+        for (let i = 1; i<=100; i++){
+            if (i % 2 !== 0) {
+                document.write(`${i}`);
+                console.log(i);
+            }
+        }
+        /*
 
-- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
-- За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
-- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
-- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+        - Дано 2 масиви з рівною кількістю об'єктів.
+        Масиви:
+        */
+            let usersWithId = [
+                {id: 1, name: 'vasya', age: 31, status: false},
+                {id: 2, name: 'petya', age: 30, status: true},
+                {id: 3, name: 'kolya', age: 29, status: true},
+                {id: 4, name: 'olya', age: 28, status: false}
+            ];
 
-- Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
-- Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
-- Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
-- Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
-- Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
-- Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
+        let citiesWithId = [
+            {user_id: 3, country: 'USA', city: 'Portland'},
+            {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+            {user_id: 2, country: 'Poland', city: 'Krakow'},
+            {user_id: 4, country: 'USA', city: 'Miami'}
+        ];
+        let usersWithCities = [];
+        for (const user of usersWithId) {
+            for (const city of citiesWithId) {
+                if (city.user_id === user.id ){
+                    let userCopy = JSON.parse(JSON.stringify(user))
+                    userCopy['address'] = JSON.parse(JSON.stringify(city));
+                    usersWithCities.push(userCopy);
+                }
+            }
+        }
 
-- Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
-- Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
-- Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
-- Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
-- Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
-- Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 
-
-- Дано 2 масиви з рівною кількістю об'єктів.
-Масиви:
-let usersWithId = [
-{id: 1, name: 'vasya', age: 31, status: false},
-{id: 2, name: 'petya', age: 30, status: true},
-{id: 3, name: 'kolya', age: 29, status: true},
-{id: 4, name: 'olya', age: 28, status: false}
-];
-
-let citiesWithId = [
-{user_id: 3, country: 'USA', city: 'Portland'},
-{user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-{user_id: 2, country: 'Poland', city: 'Krakow'},
-{user_id: 4, country: 'USA', city: 'Miami'}
-];
-
-З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
-Записати цей об'єкт в новий масив
-Example:
-let usersWithCities = [
-{
-id: 1, // <===
-name: 'vasya',
-age: 31,
-status: false,
-address: {
-user_id: 1, // <===
-country: 'Ukraine',
-city: 'Ternopil'
-}
-},
+        /*
+        З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+            Записати цей об'єкт в новий масив
+        Example:
+            let usersWithCities = [
+                {
+                    id: 1, // <===
+                    name: 'vasya',
+                    age: 31,
+                    status: false,
+                    address: {
+                        user_id: 1, // <===
+                        country: 'Ukraine',
+                        city: 'Ternopil'
+                    }
+                },
 // TO BE CONTINUED .....
-]
+          */
+
+
+
+    </script>
+</body>
+</html>
