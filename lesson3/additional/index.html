@@ -1,23 +1,67 @@
-  ---------------ДОП---------------
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      ---------------ДОП---------------
 
 -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
   EXAMPLE:
   foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
   foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
   foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
+*/
+        function change(arr, num){
+          let temp = arr[num];
+          arr[num] = arr[num+1];
+          arr[num+1] = temp;
+          return(arr)
+        }
 
+  /*
 - Дано список імен.
+*/
 let n1 = '    Harry       Potter      '
 let n2 = '    Ron       Whisley      '
 let n3 = '    Hermione       Granger      '
+    /*
 Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
+
 let n1 = 'Harry Potter'
 let n2 = 'Ron Whisley'
 let n3 = 'Hermione Granger'
-
+*/
+function normalSpace(text){
+    let arr = text.split(' ');
+    let nonEmptyItemArr = arr.filter(item => item!=='');
+  return(nonEmptyItemArr.join(' '));
+}
+    /*
 - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
 Двожина масиву від 2 до 100
 EXAMPLE:
 [1,0,6,0,3] => [1,6,3,0,0]
 [0,1,2,3,4] => [1,2,3,4,0]
 [0,0,1,0]   => [1,0,0,0]
+    */
+    function moveZero(arr){
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 0){
+                arr.push(arr.splice(i,1)[0]);
+            }
+        }
+        return (arr)
+    }
+    console.log(moveZero([1,0,6,0,3]))
+    console.log(moveZero([0,1,2,3,4]))
+    console.log(moveZero([0,0,1,0]))
+  </script>
+</body>
+</html>
