@@ -13,14 +13,66 @@
 - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 створити пустий масив, наповнити його 10 об'єктами Client
 Взяти масив (Client []).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+*/
+        class Client{
+            constructor(id, name, surname , email, phone, order) {
+                this.id = id;
+                this.name = name;
+                this.surname = surname;
+                this.email = email;
+                this.phone = phone;
+                this.order = order;
+            }
+        }
+        let clients = [];
+        clients.push(new Client(34,'Dvfv','Rdffdf','Dfdgg','Ddfsff',['sdsd','sdsd','sdsd']));
+        clients.push(new Client (345,'EFe','eefef','Efewf','sefs',['dfgdfg','dsffsdfdsf']));
+        clients.push(new Client(1,'fggg','fgsdfg','sdfgds','sdfgdfsg',['dfgdgd','dfgdgdfg','dfgdgdg','dfgdgdgd','dfgdgdgdg']));
+        clients.push(new Client(48,'fdgdg','dfgfd','fdgdgf','dgdfg',['dfgdg']));
+        clients.push(new Client(12934,'dsf','sdfds','sdfsf','sdfsdf',[]));
+        clients.push(new Client(56,'ewwef','ewdfwf','wefdsf','sdfsfe',['wede','ewdwdwed']));
+        clients.push(new Client(100,'sfsdf','sdfsf','sdf','fdgfdg',['sfdsf','sdfsdf','sdfsfsf','sdfsdfsf','sdfdsfsdf','sdfsfsdf','sdfssfsd']));
+        clients.push(new Client(101,'dfsf','sdf','sdf','sfd',['sfdf']));
+        clients.push(new Client(48,'sdf','dsf','fgdf','gfhfh',[]));
+        clients.push(new Client(32,'fdsfsd','sdf','werwr','werwer',['ewrrwre']));
 
+        let sortedClients = clients.sort(function (a,b){
+            return a.order.length - b.order.length;
+        });
+        /*
 - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
     -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
     -- info () - яка виводить всю інформацію про автомобіль
     -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
     -- changeYear (newValue) - змінює рік випуску на значення newValue
     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+*/
+        function car(model, factory, year, max_speed, v_engine){
+            return {
+                model: model,
+                factory: factory,
+                year:year,
+                max_speed:max_speed,
+                v_engine: v_engine,
+                drive: function (){
+                    console.log(`їдемо зі швидкістю ${this.max_speed} на годину`)
+                },
+                info: function (){
+                    console.log(`Модель: ${this.model}\nВиробник: ${this.factory}\nРік випуску: ${this.year}\nМаксимальна швидкість: ${this.max_speed}\nОб'єм двигуна:${this.v_engine}`)
+                },
+                increaseMaxSpeed: function (newSpeed){
+                    this.max_speed=newSpeed;
+                },
+                changeYear: function (newValue){
+                    this.year=newValue;
+                },
+                addDriver: function (driver){
+                    this.driver = driver;
+                }
+            }
+        }
 
+        /*
 
 - (Те саме, тільки через клас)
 Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -29,6 +81,35 @@
     -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
     -- changeYear (newValue) - змінює рік випуску на значення newValue
     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+    */
+
+        class Car {
+            constructor(model, factory, year, max_speed, v_engine) {
+                this.model = model;
+                this.factory = factory;
+                this.year = year;
+                this.max_speed = max_speed;
+                this.v_engine = v_engine;
+            }
+                drive() {
+                        console.log(`їдемо зі швидкістю ${this.max_speed} на годину`)
+                    }
+
+                info() {
+                    console.log(`Модель: ${this.model}\nВиробник: ${this.factory}\nРік випуску: ${this.year}\nМаксимальна швидкість: ${this.max_speed}\nОб'єм двигуна:${this.v_engine}`)
+                    }
+                increaseMaxSpeed(newSpeed) {
+                        this.max_speed = newSpeed;
+                    }
+                changeYear(newValue) {
+                        this.year = newValue;
+                    }
+                addDriver(driver) {
+                        this.driver = driver;
+                    }
+        }
+
+       /*
 
 
 
@@ -37,6 +118,59 @@
 За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
         */
+
+        class Popelyushka{
+            constructor(name, age, size_leg) {
+                this.name = name;
+                this.age = age;
+                this.size_leg = size_leg;
+            }
+
+        }
+
+        class Princ{
+            constructor(name, age, size_shoe) {
+                this.name = name;
+                this.age = age;
+                this.size_shoe = size_shoe;
+            }
+
+        }
+
+        let she = [];
+        she.push(new Popelyushka('Babazina', 90, 43 ));
+        she.push(new Popelyushka('Tetyagalya',23 , 42 ));
+        she.push(new Popelyushka('Babayaga', 1000, 38 ));
+        she.push(new Popelyushka('Hmir', 50, 98));
+        she.push(new Popelyushka('Werunya', 24, 39));
+        she.push(new Popelyushka('DSDd', 45, 56));
+        she.push(new Popelyushka('SDfddf',67 ,32 ));
+        she.push(new Popelyushka('Dffhgf', 56, 32));
+        she.push(new Popelyushka('Kjkjk', 35, 34));
+        she.push(new Popelyushka('Dfdfdg',56 ,45 ));
+        she.push(new Popelyushka('Dsfdg', 45, 40));
+
+        let he = new Princ('Arnold', 23, 32);
+        let found1
+        for (const sheElement of she) {
+            if (sheElement.size_leg === he.size_shoe){
+                found1=sheElement;
+                break;
+            }
+        }
+
+        let size = he.size_shoe;
+        let found2 =  she.find(function (value){
+            if (value.size_leg === size){
+                return true;
+            }else{
+                return false;
+            }
+
+        });
+
+
+
     </script>
 </body>
 </html>

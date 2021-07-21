@@ -13,6 +13,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="JSInitializeFieldsIntentionBase.visibility" value="public" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -28,7 +29,9 @@
       <option name="presentableId" value="Default" />
       <updated>1626849670152</updated>
       <workItem from="1626849671308" duration="392000" />
-      <workItem from="1626853064779" duration="3909000" />
+      <workItem from="1626853064779" duration="6818000" />
+      <workItem from="1626871650043" duration="5914000" />
+      <workItem from="1626880651904" duration="2933000" />
     </task>
     <servers />
   </component>
