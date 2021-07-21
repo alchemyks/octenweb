@@ -11,15 +11,87 @@
     <script>
         /*
 - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
+*/
+        function arrRandGen(len) {
+            let arr = [];
+            for (let i = 0; i < len; i++) {
+                arr.push(Math.round(Math.random() * 100));
+            }
+            return arr;
+        }
+
+        /*
 - Змінти попередню функцію, щоб діапазон можна було визначити через аргументи.
+*/
+        function arrRandGenParam(len, min, max) {
+            let arr = [];
+            for (let i = 0; i < len; i++) {
+                arr.push(Math.round(Math.random() * (max - min) + min));
+            }
+            return arr;
+        }
 
-- створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
-- створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, за лишивши тільки парні числа
+        /*
+        - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
+        */
+        let sortedArr = arrRandGen(100).sort(function (a, b) {
+            return a - b;
+        });
+        /*
+ - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, за лишивши тільки парні числа
+*/
+        let filteredArr = arrRandGen(100).filter(function (value) {
+            return value % 2 === 0;
+        });
+
+        /*
 - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на срінгові.
+*/
+        function toStr(value) {
+            return value.toString();
+        }
 
+        let strArr = arrRandGen(100).map(toStr);
+
+        /*
 - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 створити пустий масив, наповнити його 10 об'єктами new User(....)
 Взяти масив цей  User[] та: Відфільтрувати , залишивши тільки об'єкти з парними id (filter) та Відсортувати його по id. по зростанню (sort)
+        */
+
+        class User {
+            constructor(id, name, surname, email, phone) {
+                this.id = id;
+                this.name = name;
+                this.surname = surname;
+                this.email = email;
+                this.phone = phone;
+            }
+        }
+
+        let users = [];
+        users.push(new User(1, 'Sdff', 'Ffsfs', 'daaasd@sfdsdf.sd', '989878'));
+        users.push(new User(68, 'Ddff', 'Fsdfs', 'asds@asd.io', '98999'));
+        users.push(new User(21, 'Lklkl', 'Huhj', 'HJhjh@jkk.iu', '67676'));
+        users.push(new User(345, 'Hjhjhj', 'JHjjh', 'hjhjj@jkk,uy', '8799'));
+        users.push(new User(4552, 'Jhjhj', 'jkkjk', 'kjkkj@iuiu.uu', '45454'));
+        users.push(new User(48, 'Sjhkk', 'Chjhj', 'jhkjkj@kjhkk,cij', '67565'));
+        users.push(new User(101, 'Shjj', 'Kjkhk', 'sda@hggg.jhh', '65432'));
+        users.push(new User(36, 'Ajhkk', 'Vjhjj', 'aqsas@kjkkj.fr', '2323433'));
+        users.push(new User(98, 'Sddfdf', 'Vjhjjh', 'ssdsd@klkl.fd', '7887887'));
+        users.push(new User(9, 'Ajkj', 'Bhjjhjh', 'sdsds@hjjh.jhj', '2323434'));
+        users.push(new User(3, 'Jkjkjkj', 'Sbnbn', 'saddssf@jkjk.err', '1234'));
+
+        let usersPairId = users.filter(function (value) {
+            return value.id % 2 === 0;
+        });
+
+        let usersSortPairId = usersPairId.sort(function (a, b) {
+            return a.id - b.id;
+        });
+        /*
+
+
         */
     </script>
 
