@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+
+        .labels{
+            padding: 5px;
+        }
+        .inputs{
+            padding: 3px;
+        }
+        .button{
+            margin: 15px 0 20px 270px;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form id="bestForm">
+        <div style="display: flex">
+            <div >
+                <div class="labels"><label for='name'>Назва товару</label></div>
+                <div class="labels"><label for="count">Кількість товару</label></div>
+                <div class="labels"><label for="price">Ціна товару</label></div>
+                <div class="labels"><label for="url">Фото(url)</label></div>
+            </div>
+            <div >
+                <div class="inputs">
+                    <input id="name" name="name" type="text">
+                </div>
+                <div class="inputs">
+                    <input id="count" name="count" type="text">
+                </div>
+                <div class="inputs">
+                    <input id="price" name="price" type="text">
+                </div>
+                <div class="inputs">
+                    <input id="url" name="url" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <input id="submit" class="button" type="submit" value="Додати">
+        </div>
+
+    </form>
+    <div>
+        <a href='list.html'>Переглянути</a>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
