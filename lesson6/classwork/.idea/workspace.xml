@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff119c51-bca5-4ed7-9d89-9a9fe252fd3b" name="Default Changelist" comment="" />
+    <list default="true" id="b7671333-2c99-43b4-9454-6b008f2d09aa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1viijpKKL2o7GUl8gKkzFPQXFbe" />
+  <component name="ProjectId" id="1vtIDYBmQRYWZCkKWmG7OLZvVUy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -16,29 +16,35 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lesson6/classwork" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/fourth_task" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff119c51-bca5-4ed7-9d89-9a9fe252fd3b" name="Default Changelist" comment="" />
-      <created>1627051448146</created>
+      <changelist id="b7671333-2c99-43b4-9454-6b008f2d09aa" name="Default Changelist" comment="" />
+      <created>1627374838335</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627051448146</updated>
-      <workItem from="1627051449240" duration="613000" />
-      <workItem from="1627293008525" duration="6637000" />
-      <workItem from="1627374666696" duration="172000" />
+      <updated>1627374838335</updated>
+      <workItem from="1627374839509" duration="5611000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/main.js</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
