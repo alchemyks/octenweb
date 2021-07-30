@@ -13,6 +13,7 @@
 
  */
 
+/*
 function wakeUp(){
     return new Promise((resolve, reject)=>{
     setTimeout(()=>{
@@ -89,8 +90,12 @@ function imHome(){
     },200)});
 }
 
+*/
 
-    wakeUp().then(()=>{
+/*
+Promise
+ */
+  /*  wakeUp().then(()=>{
        return breakfast();
     })
         .then(()=>{
@@ -120,4 +125,109 @@ function imHome(){
         .then(()=>{
             return  imHome();
         });
+*/
 
+/*
+Async
+ */
+
+/*
+async function start(){
+    await wakeUp();
+    await breakfast();
+    await shower();
+    await takeCar();
+    await goToWork();
+    await working();
+    await lunch();
+    await working();
+    await goToHome();
+    await parkCar();
+    await imHome();
+}
+start().then();*/
+
+/*
+Callback
+*/
+
+function wakeUp(callback){
+        setTimeout(()=>{
+            console.log('Прокинувся!!')
+            callback();
+        },1100)
+}
+function breakfast(callback){
+        setTimeout(()=>{
+            console.log('Сніданок!!!')
+            callback()
+        }, 600)
+
+}
+function shower(callback){
+        setTimeout(()=>{
+            console.log('Душ!!!');
+            callback();
+        }, 500);
+}
+function takeCar(callback){
+        setTimeout(()=>{
+            console.log('Забрати з парковки авто!!!');
+            callback()
+        },1000);
+}
+function goToWork(callback){
+        setTimeout(()=>{
+            console.log('Їду на роботу!!!')
+            callback();
+        },3000);
+}
+function working(callback){
+        setTimeout(()=>{
+            console.log('Працюю!!!')
+            callback();
+        },3000);
+}
+function lunch(callback){
+        setTimeout(()=>{
+            console.log('Обід!!!');
+            callback();
+        },500);
+}
+function goToHome(callback){
+        setTimeout(()=>{
+            console.log('Їду дудому!!!')
+            callback();
+        },1000);
+}
+function parkCar(callback){
+        setTimeout(()=>{
+            console.log('Поставив авто на парковку');
+            callback();
+        },300);
+}
+function imHome(){
+        setTimeout(()=>{
+            console.log('Вдома!!!')
+        },200);
+}
+
+wakeUp(()=>{
+    breakfast(()=>{
+        shower(()=>{
+            takeCar(()=>{
+                goToWork(()=>{
+                    working(()=>{
+                        lunch(()=>{
+                            working(()=>{
+                                goToHome(()=>{
+                                    parkCar(imHome)
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    })
+});
