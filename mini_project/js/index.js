@@ -9,7 +9,7 @@ fetch('https://jsonplaceholder.typicode.com/users').then(response=>response.json
             userBlock.innerHTML = `<h3>${user.id} - ${user.name}</h3>`;
             let hrefUser = document.createElement('a');
             hrefUser.setAttribute('href', `user-details.html?user=${JSON.stringify(user)}`);
-            hrefUser.textContent = 'Детально';
+            hrefUser.textContent = 'Detail';
             userBlock.appendChild(hrefUser);
             wrapBlock.appendChild(userBlock);
         }

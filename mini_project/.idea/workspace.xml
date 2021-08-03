@@ -14,6 +14,11 @@
       </list>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/post-detail.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/js/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/js/user-details.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1wADPtdNRxrXPBcoVo35YPTD9hI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +48,7 @@
       <workItem from="1627892480284" duration="10604000" />
       <workItem from="1627923854683" duration="9179000" />
       <workItem from="1628009663243" duration="31000" />
+      <workItem from="1628010271234" duration="6038000" />
     </task>
     <servers />
   </component>

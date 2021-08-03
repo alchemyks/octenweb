@@ -6,7 +6,8 @@ wrap.appendChild(userInfoDiv);
 userInfoDiv.setAttribute('class', 'user_info');
 userInfoDiv.innerHTML = `<div>
                             <p><em>User:</em></p>
-                            <p><strong>${user.id} - ${user.name}</strong></p>
+                            <p>Id: ${user.id}</p> 
+                            <p>Name: ${user.name}</p>
                             <p>Username: ${user.username}</p>
                             <p>Email: ${user.email}</p>
                             <p>Phone: ${user.phone}</p>
@@ -35,8 +36,14 @@ buttonGetPost.onclick = (()=>{
     fetch(` https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
         .then(response=>response.json())
         .then(value => {
-            const postHolder = document.createElement('div');
-            postHolder.setAttribute('class', 'post_holder');
+            let postHolder
+            if (document.getElementsByClassName('post_holder')[0]){
+                postHolder = document.getElementsByClassName('post_holder')[0];
+                postHolder.innerHTML = '';
+            } else {
+                postHolder = document.createElement('div');
+                postHolder.setAttribute('class', 'post_holder');
+            }
             for (const post of value) {
                 const postDiv = document.createElement('div');
                 postDiv.innerHTML = `<p>${post.title}</p>`
