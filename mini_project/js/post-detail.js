@@ -20,8 +20,13 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postDetailData.id}/comments`
         const allCommentsDiv = document.createElement('div');
         allCommentsDiv.setAttribute('class', 'all_comments');
         for (const post of value) {
-
+            const comment= createTagText('div');
+            comment.appendChild(createTagText('p', `Name: ${post.name}`));
+            comment.appendChild(createTagText('p', `Email: ${post.email}`));
+            comment.appendChild(createTagText('p', `Comments: ${post.body}`));
+            allCommentsDiv.appendChild(comment);
         }
+        wrap.appendChild(allCommentsDiv);
     })
 wrap.appendChild(postDetailDiv);
 console.log(postDetailData)
