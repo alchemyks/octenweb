@@ -18,6 +18,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postDetailData.id}/comments`
     .then(response=>response.json())
     .then(value => {
         const allCommentsDiv = document.createElement('div');
+        allCommentsDiv.appendChild(postDetailDiv);
         allCommentsDiv.setAttribute('class', 'all_comments');
         for (const post of value) {
             const comment= createTagText('div');
@@ -26,7 +27,11 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postDetailData.id}/comments`
             comment.appendChild(createTagText('p', `Comments: ${post.body}`));
             allCommentsDiv.appendChild(comment);
         }
+        if ( value.length % 4 !== 0){
+            for (let i = 0; i < 4 - value.length % 4; i++) {
+                allCommentsDiv.appendChild(createTagText('div'))
+            }
+        }
         wrap.appendChild(allCommentsDiv);
     })
-wrap.appendChild(postDetailDiv);
-console.log(postDetailData)
+//wrap.appendChild(postDetailDiv);
