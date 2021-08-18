@@ -1,0 +1,10 @@
+.wrap{
+    display: flex;
+
+}
+.users_box{
+    width: 300px;
+}
+.user_posts_box{
+    width: 300px;
+}
