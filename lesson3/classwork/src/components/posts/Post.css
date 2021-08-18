@@ -1,0 +1,12 @@
+.posts_box{
+    display: flex;
+}
+.post_box{
+    width: 300px;
+    margin: 20px;
+}
+
+.post_detail_box{
+    width: 300px;
+    margin: 20px;
+}
