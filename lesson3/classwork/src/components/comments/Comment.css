@@ -1,0 +1,12 @@
+.wrap{
+    display: flex;
+}
+.comment_box{
+    width: 300px;
+    margin: 20px;
+}
+
+.comment_detail_box{
+    width: 300px;
+    margin: 20px;
+}
