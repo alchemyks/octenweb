@@ -10,7 +10,7 @@ export default function Cars(){
     return(
         <div className={'cars_box'}>
             {
-                cars.map(value => {
+                cars.reverse().map(value => {
                    return(
                        <Car key={value.id} item={value}/>
                    );
