@@ -19,17 +19,20 @@ export default function Form() {
                 }
                 break;
             case "year":
-                ////console.log(+e.target.value)
-                ///console.log(e.target.value.length)
-                console.log((e.target.value.length < 4 && +e.target.value != NaN))
-
-                if ((+e.target.value <= 2021 && +e.target.value >= 1990) || (e.target.value.length < 4 && +e.target.value)) {
-                    setFormData({...formData, year: e.target.value});
-                }
+                setFormData({...formData, year: e.target.value});
                 break;
             default:
                 break;
         }
+    }
+    const checkForm = ()=>{
+        return (!(+formData.year >= 1990 && +formData.year <=2020 && formData.model && formData.price));
+    }
+
+    const doPostData = ()=>{
+        let toPostData = {...formData};
+        setFormData(initData)
+        postCar(toPostData).then()
     }
 
     return (
@@ -45,13 +48,11 @@ export default function Form() {
                 </div>
                 <div>
                     <label htmlFor="{'year'}">Рік випуску: </label>
-                    <input type="text" name={'year'} onChange={monitoringStateOnInput} value={formData.year}/>
+                    <input type="text" name={'year'} onChange={monitoringStateOnInput} value={formData.year} min={1990} max={2021}/>
+
                 </div>
                 <div>
-                    <input onClick={()=>{
-                        setFormData(initData)
-                        return(postCar(formData))
-                    }} className={'add_car_button'} type={'button'} value={'Додати'}/>
+                    <input onClick={()=>doPostData()} className={'add_car_button'} type={'button'} value={'Додати'} disabled={checkForm()}/>
                 </div>
             </form>
         </div>
