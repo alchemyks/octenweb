@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getCars} from "../../services/cars.api.service";
+import {deleteCar, getCars} from "../../services/cars.api.service";
 import Car from "./Car";
 import Form from "./Form";
 
@@ -25,7 +25,8 @@ export default function Cars({count}){
    }
 
 const delCar = (car)=>{
-
+    setCars([...cars].filter((item)=>item.id !== car.id))
+    deleteCar(car).then()
 }
 
     return(
@@ -34,7 +35,7 @@ const delCar = (car)=>{
             {
                 [...cars].reverse().map(value => {
                 return(
-                <Car key={value.id} item={value} setFormData={setFormValue} deleteCar={delCar}/>
+                <Car key={value.id} item={value} setFormData={setFormValue} delCar={delCar}/>
                 );
             })
             }

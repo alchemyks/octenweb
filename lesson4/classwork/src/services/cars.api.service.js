@@ -35,4 +35,4 @@ const postCar = (car)=> {
         }).then(response => response.json());
     }
 }
-export {getCars, postCar}
+export {getCars, postCar, deleteCar}
