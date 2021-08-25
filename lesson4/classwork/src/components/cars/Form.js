@@ -34,11 +34,15 @@ export default function Form({updateCarList, valueForm}) {
         return (!(+formData.year >= 1990 && +formData.year <=2020 && formData.model && formData.price));
     }
 
+
     const doPostData = ()=>{
         let toPostData = {...formData};
         setFormData(initData);
         postCar(toPostData).then((data) =>{
+            console.log(data);
+            if (data){
             updateCarList(data);
+            }
         });
     }
 

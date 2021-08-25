@@ -11,7 +11,12 @@ export default function Cars({count}){
     },[])
     let [formData, setFormData] = useState(NaN);
    const updateCarList = (car)=>{
-        setCars([...cars, car])
+        setCars([...cars].map((item)=>{
+            if (item.id === car.id){
+                return Object.assign({}, item, { model: car.model, year: car.year, price: car.price});
+            }
+            return item;
+        }))
    }
 
    let setFormValue = (value)=>{
@@ -19,7 +24,9 @@ export default function Cars({count}){
             setFormData(value);
    }
 
+const delCar = (car)=>{
 
+}
 
     return(
         <div className={'cars_box'}>
@@ -27,7 +34,7 @@ export default function Cars({count}){
             {
                 [...cars].reverse().map(value => {
                 return(
-                <Car key={value.id} item={value} setFormData={setFormValue}/>
+                <Car key={value.id} item={value} setFormData={setFormValue} deleteCar={delCar}/>
                 );
             })
             }
