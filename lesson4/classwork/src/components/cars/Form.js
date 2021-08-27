@@ -4,10 +4,9 @@ import {postCar} from "../../services/cars.api.service";
 
 export default function Form({updateCarList, valueForm}) {
     let initData = {model: '', price: '', year:''}
-    let [formData, setFormData] = useState(initData)
+    let [formData, setFormData] = useState(initData);
 
     useEffect(()=> {
-        console.log(valueForm);
         setFormData(valueForm)}, [valueForm])
 
 
@@ -39,9 +38,8 @@ export default function Form({updateCarList, valueForm}) {
         let toPostData = {...formData};
         setFormData(initData);
         postCar(toPostData).then((data) =>{
-            console.log(data);
             if (data){
-            updateCarList(data);
+                updateCarList(data, !toPostData.id);
             }
         });
     }
