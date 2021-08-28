@@ -11,7 +11,8 @@ const deleteCar = (car)=>{
         headers:{
             'Content-type': 'application/json; charset=UTF-8',
         },
-    }).then(response => response.json());
+    }).then();
+ //   }).then(response => response.json());
 }
 
 const postCar = (car)=> {
