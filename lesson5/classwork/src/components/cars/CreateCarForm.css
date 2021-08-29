@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+
+label{
+    display: block;
+}
+.input_wrap{
+    display: flex;
+}
