@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import './CreateCarForm.css'
+import {appendCar} from "../../services/cars.api.services";
 
-export default function CreateCarForm() {
+export default function CreateCarForm({car}) {
 
     const initFormData = {model: '', price: '', year: ''}
     let [formData, setFormData] = useState(initFormData)
@@ -14,6 +15,22 @@ export default function CreateCarForm() {
 
     let [formValid, setFormValid] = useState(false);
 
+    let [updateCar, setUpdateCar] = useState(car);
+
+
+
+    useEffect(()=>{
+        if (car === undefined){
+            setFormData(initFormData);
+        }else{
+            setFormData(car);
+        }
+    }, [car])
+
+
+
+
+
     useEffect(()=>{
         if (inputsError.year || inputsError.price || inputsError.model){
             setFormValid(false);
@@ -25,7 +42,6 @@ export default function CreateCarForm() {
     const onChangeInput = (e) => {
         let newData = {...formData, [e.target.name]: e.target.value};
         setFormData({...newData});
-
         validateForm(e);
     }
 
@@ -38,11 +54,29 @@ export default function CreateCarForm() {
     const validateForm = (e) => {
         switch (e.target.name){
             case 'model':
-
+                const regexpModel = new RegExp('^\\D{1,20}$');
+                if (regexpModel.test(e.target.value)){
+                    setInputsError({...inputsError, model: ''})
+                }else{
+                    setInputsError({...inputsError, model: ' only alpha min 1 max 20 characters'})
+                }
                 break;
             case 'year':
+                console.log('validate year')
+                const regexpYear = new RegExp('^\\d+$');
+                if (regexpYear.test(e.target.value) && +e.target.value >= 1990 && +e.target.value <= 2021){
+                    setInputsError({...inputsError, year: ''})
+                }else{
+                    setInputsError({...inputsError, year: ' min 1990, max current year'})
+                }
                 break;
             case 'price':
+                console.log('validate price')
+                if (e.target.value !=='' && +e.target.value+1 && +e.target.value >= 0){
+                    setInputsError({...inputsError, price: ''})
+                }else{
+                    setInputsError({...inputsError, price: ' greater or equal than 0'})
+                }
                 break;
         }
     }
@@ -50,8 +84,8 @@ export default function CreateCarForm() {
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        console.log(formData);
         setFormData(initFormData);
+        appendCar(formData).then();
     }
 
     return (
