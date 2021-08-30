@@ -13,14 +13,15 @@ import {useState} from "react";
 
 function App() {
 
-    let [carForUpdate, setCarForUpdate] = useState({})
+    let [carForUpdate, setCarForUpdate] = useState(undefined)
 
     return (
         <Router>
             <div className="App">
-                <Link to={'/Cars'}>Cars</Link>
-                <Link to={'/create_car'}>Create Car</Link>
-                <Link to={'/update_car'}>Update Car</Link>
+                <div className={'wrap'}>
+                <Link to={'/Cars'}>View cars</Link>
+                <Link to={'/create_car'}>Create car</Link>
+                <Link to={'/update_car'}>Update car</Link>
                 <Route path={'/Cars'}>
                     <Cars/>
                 </Route>
@@ -31,6 +32,7 @@ function App() {
                     <UpdateCarForm setCarForUpdate={setCarForUpdate}/>
                     <CreateCarForm car={carForUpdate}/>
                 </Route>
+                </div>
             </div>
         </Router>
     );

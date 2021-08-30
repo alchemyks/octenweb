@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import './CreateCarForm.css'
-import {appendCar} from "../../services/cars.api.services";
+import {appendCar, updateCarById} from "../../services/cars.api.services";
 
 export default function CreateCarForm({car}) {
 
@@ -15,7 +15,9 @@ export default function CreateCarForm({car}) {
 
     let [formValid, setFormValid] = useState(false);
 
-    let [updateCar, setUpdateCar] = useState(car);
+    let [buttonName, setButtonName] = useState('Save')
+
+   // let [updateCar, setUpdateCar] = useState(car);
 
 
 
@@ -23,7 +25,10 @@ export default function CreateCarForm({car}) {
         if (car === undefined){
             setFormData(initFormData);
         }else{
+            setInputsError({model: '',price: '',year: ''})
+            setButtonName('Update')
             setFormData(car);
+
         }
     }, [car])
 
@@ -52,6 +57,7 @@ export default function CreateCarForm({car}) {
 
 
     const validateForm = (e) => {
+        setInputStartChek({...inputStartCheck, [e.target.name]: true});
         switch (e.target.name){
             case 'model':
                 const regexpModel = new RegExp('^\\D{1,20}$');
@@ -62,7 +68,6 @@ export default function CreateCarForm({car}) {
                 }
                 break;
             case 'year':
-                console.log('validate year')
                 const regexpYear = new RegExp('^\\d+$');
                 if (regexpYear.test(e.target.value) && +e.target.value >= 1990 && +e.target.value <= 2021){
                     setInputsError({...inputsError, year: ''})
@@ -71,7 +76,6 @@ export default function CreateCarForm({car}) {
                 }
                 break;
             case 'price':
-                console.log('validate price')
                 if (e.target.value !=='' && +e.target.value+1 && +e.target.value >= 0){
                     setInputsError({...inputsError, price: ''})
                 }else{
@@ -85,7 +89,11 @@ export default function CreateCarForm({car}) {
     const onSubmitForm = (e) => {
         e.preventDefault();
         setFormData(initFormData);
-        appendCar(formData).then();
+        if (formData.id){
+            updateCarById(formData).then();
+        }else {
+            appendCar(formData).then();
+        }
     }
 
     return (
@@ -113,7 +121,7 @@ export default function CreateCarForm({car}) {
                                    value={formData.year} min={1990} max={2021}/>
                         </div>
                     <div>
-                        <input disabled={!formValid} type={'submit'} value={'save'}/>
+                        <input disabled={!formValid} type={'submit'} value={buttonName}/>
                     </div>
                 </form>
             </div>

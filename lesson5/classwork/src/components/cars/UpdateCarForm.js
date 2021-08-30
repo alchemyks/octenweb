@@ -20,9 +20,9 @@ export default function UpdateCarForm({setCarForUpdate}){
         <div className={'update_car_box'}>
             <form className={'create_car_form'}>
                 <select name="select_car" onChange={onSelectCar}>
-                    <option value={undefined}></option>
+                    <option key={'0'} value={undefined}></option>
                     {
-                        cars.map(car=><option value={car.id}>{car.model}</option> )
+                        cars.map(car=><option key={car.id} value={car.id}>{car.model}</option> )
                     }
                 </select>
             </form>
