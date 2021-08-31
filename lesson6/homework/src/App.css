@@ -1,0 +1,7 @@
+.App {
+  margin: 40px;
+}
+.wrap{
+  display: flex;
+  flex-direction: column;
+}
