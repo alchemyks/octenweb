@@ -13,10 +13,11 @@ function App() {
                 <div className={'wrap'}>
                     <Link to={'/users'}>View users</Link>
                     <Link to={'/posts'}>View posts</Link>
-                    <Route path={'/users'}>
-                        <Users/>
+                    <Route path={'/users'} component={Users}/>
+
+                    <Route path={'/posts'}>
+                            Post
                     </Route>
-                    <Route path={'/posts'}></Route>
                 </div>
             </div>
         </Router>

@@ -1,8 +1,11 @@
 import {useEffect, useState} from "react";
 import {getUsers} from "../../services/jsonplaceholder.api.services";
 import User from "./User";
+import UserDetails from "./UserDetails";
+import {Route} from "react-router-dom";
 
-export default function Users(){
+export default function Users(props){
+    let {match: {url}} = props;
     let [users, setUsers] = useState([]);
     useEffect(()=>{
         getUsers().then(value => setUsers([...value]));
@@ -16,6 +19,8 @@ export default function Users(){
                     );
                 })
             }
+            <Route path={`${url}/:id`} render={(props)=>{return <UserDetails {...props}/>}}/>
+
         </div>
     )
 }
