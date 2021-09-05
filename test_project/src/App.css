@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+
+.App {
+    background-image: url("https://www.discountdisplays.co.uk/our-blog/wp-content/uploads/Trustpilot-Review-RM--683x1024.jpg");
+    background-size: 100%;
+
+}
+
+.root_wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 1200px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    background-color: #313a47;
+    width: 100%;
+}
+.content_holder{
+    display: flex;
+    height: 1024px;
+    width: 100%;
+}
+
+.main_content{
+    width: 70%;
+    height: 1024px;
+    border: aqua solid 1px;
+
+}
+.additional_content{
+    width: 30%;
+    height: 1024px;
+    background-color: #202b36;
+
+}
+.footer{
+    width: 100%;
+    height: 40px;
+    border: aqua solid 1px;
+}
+
