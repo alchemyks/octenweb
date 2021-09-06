@@ -11,10 +11,18 @@ const fetchGenreList = ()=> async (dispatch) => {
     let response = await (await fetch(baseUrlV3+'/genre/movie/list',{...baseHeaders})).json();
     dispatch(loadGenre({...response}));
 }
+
+const fetchMovieByGenre = (genreId)=> async (dispatch) => {
+    let response = await (await fetch(baseUrlV3+`/discover/movie/?with_genres=${genreId}`,{...baseHeaders})).json();
+    dispatch(loadGenre({...response}));
+}
 /*`/list/${listId}`*/
+/*/discover/movie/?page=${pageId}`*/
+
 const fetchMoviePageById = (pageId)=> async (dispatch) => {
-    let response = await (await fetch(baseUrlV3+`/discover/movie/?page=${pageId}`, baseHeaders).then(value => value.json()));
-    dispatch(loadMoviesByPage({...response}));
+    let response = await (await fetch(baseUrlV3+`/discover/movie?sort_by=popularity.desc`, baseHeaders).then(value => value.json()));
+    console.log('services', response)
+    dispatch(loadMoviesByPage([...response.results]));
 }
 
 const fetchNewMoviePage = () => async (dispatch) => {
@@ -24,5 +32,5 @@ const fetchNewMoviePage = () => async (dispatch) => {
 
 }
 
-export {fetchGenreList, fetchMoviePageById}
+export {fetchGenreList, fetchMoviePageById, fetchMovieByGenre}
 

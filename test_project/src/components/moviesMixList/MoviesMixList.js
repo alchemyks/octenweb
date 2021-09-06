@@ -1,26 +1,24 @@
-import './MoviesPartsList.css'
+import './MoviesMixList.css'
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {fetchMoviePageById} from "../services/tmdb.api.services";
+import {fetchMovieByGenre, fetchMoviePageById} from "../../services/tmdb.api.services";
 
 
-export default function MoviesPartList({genre, count}){
-    let genreName = 'Новые фильмы'
-    let movies = useSelector(({movieList}) => {
-        if (movieList){
-        console.log(movieList)}
-
-    })
+export default function MoviesMixList(){
+    let movies = useSelector(({mixMovies}) => [...mixMovies]);
     let dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchMoviePageById(1));
     },[])
     return(
         <div className={'movie_parts_list'}>
-            <h3>{genreName}</h3>
+            <h3>{'Наиболее популярные'}</h3>
             <div className={'movie_small_card_box'}>
                 {
-                   movies && movies.results.map(value=>{
+                    console.log(movies)
+                }
+                {
+                   movies && movies.map(value=>{
                         return(
                             <div key={value.id} className={'movie_box'}>
                                 <div className={'movie_poster_box'}>

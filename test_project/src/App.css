@@ -26,19 +26,20 @@
 }
 .content_holder{
     display: flex;
-    height: 1024px;
+    /*height: 1024px;*/
     width: 100%;
 }
 
 .main_content{
     width: 70%;
-    height: 1024px;
-    border: aqua solid 1px;
+    height: auto;
+    border: #262c34 solid 1px;
+    background-color: #202b36;
 
 }
 .additional_content{
     width: 30%;
-    height: 1024px;
+    /*height: 1024px;*/
     background-color: #202b36;
 
 }
