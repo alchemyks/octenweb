@@ -1,0 +1,4 @@
+
+const COUNT_CARD_IN_GENRE_BOX = 4;
+
+export {COUNT_CARD_IN_GENRE_BOX}
