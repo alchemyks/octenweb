@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGenreList} from "../../services/tmdb.api.services";
 import './GenreBadge.css'

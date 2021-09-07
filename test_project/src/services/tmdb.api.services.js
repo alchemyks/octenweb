@@ -1,4 +1,4 @@
-import {loadGenre, loadMoviesByPage} from "../redux/actionCreators";
+import {loadGenre, loadMovieInfo, loadMoviesByPage, loadTopMovies} from "../redux/actionCreators";
 
 const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTY4NGNkMThmZTk0YTE3MjI1NzU1MWUwMmEzZDUxZCIsInN1YiI6IjYxMzIyMjNjOTI0Y2U1MDA4OWZkYTUzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vFe9D5dFMgvcsnafWwshEaS85HVyPNAGq_fF9-rCymc'
 const baseUrlV3 = 'https://api.themoviedb.org/3';
@@ -19,18 +19,22 @@ const fetchMovieByGenre = (genreId)=> async (dispatch) => {
 /*`/list/${listId}`*/
 /*/discover/movie/?page=${pageId}`*/
 
-const fetchMoviePageById = (pageId)=> async (dispatch) => {
-    let response = await (await fetch(baseUrlV3+`/discover/movie?sort_by=popularity.desc`, baseHeaders).then(value => value.json()));
-    console.log('services', response)
+const fetchMoviesPageById = (pageId)=> async (dispatch) => {
+    let response = await (await fetch(baseUrlV3+`/discover/movie/?page=${pageId}`, baseHeaders).then(value => value.json()));
     dispatch(loadMoviesByPage([...response.results]));
 }
 
-const fetchNewMoviePage = () => async (dispatch) => {
-    let response = await (await fetch(baseUrlV3+``, baseHeaders).then(value => value.json()));
-    //todo add new action creator!!!
-    dispatch()
+const fetchTopMovies = ()=> async (dispatch) => {
+    let response = await (await fetch(baseUrlV3+`/discover/movie?sort_by=popularity.desc`, baseHeaders).then(value => value.json()));
+    dispatch(loadTopMovies([...response.results]));
+}
+
+
+const fetchMovieInfo = (id) => async (dispatch) => {
+    let response = await (await fetch(baseUrlV3+`/movie/${id}`, baseHeaders).then(value => value.json()));
+    dispatch(loadMovieInfo(response));
 
 }
 
-export {fetchGenreList, fetchMoviePageById, fetchMovieByGenre}
+export {fetchGenreList, fetchMoviesPageById, fetchMovieByGenre, fetchTopMovies, fetchMovieInfo}
 
