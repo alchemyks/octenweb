@@ -1,0 +1,28 @@
+.menu_wrapper{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+a{
+    text-decoration: none;
+
+}
+
+.theme_box{
+    cursor: pointer;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.logo a{
+    color: burlywood;
+}
+.find_box{
+    width: 30%;
+}
+.logging_box{
+    width: 20%;
+}

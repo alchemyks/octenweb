@@ -1,0 +1,12 @@
+.sidebar_top_box img{
+    width: 100px;
+    height: 150px;
+}
+
+.sidebar_top_box{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    justify-content: center;
+
+}
