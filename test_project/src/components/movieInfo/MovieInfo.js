@@ -6,13 +6,19 @@ import './MovieInfo.css'
 
 export default function MovieInfo(){
     let {id} =useParams();
+    let param = useParams();
     let movieCard = useSelector(({movieInfo}) => movieInfo);
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchMovieInfo(id));
-    },[]);
+    },[id]);
     return(
         <div className={'movie_info_box'}>
+            {
+
+                    console.log('MovieMix', param)
+
+            }
             <div className={'movie_info_wrap'}>
                 <div className={'movie_info_poster_box'}>
                     {<img src={`https://image.tmdb.org/t/p/w200${movieCard.poster_path}`} alt={movieCard.original_title}/>}

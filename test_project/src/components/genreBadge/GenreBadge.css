@@ -3,18 +3,22 @@
 
 }
 
+.genre_item_wrap{
+    cursor: pointer;
+}
+
 .genre_number_box{
     margin-left: 10px;
-    color: white;
+    /*color: white;*/
     width: 20px;
     height: 20px;
-    border: white solid 1px;
+    border: #1c4f56 solid 1px;
     border-radius: 50%;
     text-align: center;
 }
 
 .genre_value_box{
-    color: white;
+   /* color: white;*/
     margin-left: 5px;
 
 }

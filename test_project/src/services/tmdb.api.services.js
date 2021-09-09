@@ -14,7 +14,7 @@ const fetchGenreList = ()=> async (dispatch) => {
 
 const fetchMovieByGenre = (genreId)=> async (dispatch) => {
     let response = await (await fetch(baseUrlV3+`/discover/movie/?with_genres=${genreId}`,{...baseHeaders})).json();
-    dispatch(loadGenre({...response}));
+    dispatch(loadMoviesByPage([...response.results]));
 }
 /*`/list/${listId}`*/
 /*/discover/movie/?page=${pageId}`*/
@@ -33,8 +33,12 @@ const fetchTopMovies = ()=> async (dispatch) => {
 const fetchMovieInfo = (id) => async (dispatch) => {
     let response = await (await fetch(baseUrlV3+`/movie/${id}`, baseHeaders).then(value => value.json()));
     dispatch(loadMovieInfo(response));
-
 }
 
-export {fetchGenreList, fetchMoviesPageById, fetchMovieByGenre, fetchTopMovies, fetchMovieInfo}
+const fetchTvTopRated = () => async (dispatch) => {
+    let response = await (await fetch(baseUrlV3+`/tv/top_rated`, baseHeaders).then(value => value.json()));
+    dispatch(loadMoviesByPage([...response.results]));
+}
+
+export {fetchGenreList, fetchMoviesPageById, fetchMovieByGenre, fetchTopMovies, fetchMovieInfo,fetchTvTopRated}
 
