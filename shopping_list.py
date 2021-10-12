@@ -1,5 +1,10 @@
+import json
+
+
 class ShoppingList:
     __shoppings = {}
+    __file_name = 'shopping_list.json'
+    __data_in_file = True
 
     def print_menu(self):
         print('1) Создать запись\n' 
@@ -11,6 +16,14 @@ class ShoppingList:
 
     def continue_(self):
         input("Для возвращения в меню намите 'Enter':")
+
+    def read_data(self):
+        with open(self.__file_name) as file:
+            self.__shoppings = json.load(file)
+
+    def append_data(self):
+        with open(self.__file_name, mode='w') as file:
+            file.write(json.dumps(self.__shoppings))
 
     def create_shopping(self):
         while True:
@@ -25,18 +38,20 @@ class ShoppingList:
                 print("Введите числовое значение цены")
                 continue
             break
-        self.__shoppings[shopping] = int(price)
+        self.__shoppings[shopping] = price
+        if self.__data_in_file:
+            self.append_data()
 
     def get_all_data(self):
         print(*[f'{k}: {str(v)}' for k, v in self.__shoppings.items()], sep='\n')
         self.continue_()
 
     def get_sum(self):
-        print(sum([v for k, v in self.__shoppings.items()]))
+        print(sum([int(v) for k, v in self.__shoppings.items()]))
         self.continue_()
 
     def get_max_price(self):
-        print(max([v for k, v in self.__shoppings.items()]))
+        print(max([int(v) for k, v in self.__shoppings.items()]))
         self.continue_()
 
     def search_item(self):
@@ -52,7 +67,28 @@ class ShoppingList:
             else:
                 break
 
+    def check_storage(self):
+        try:
+            file = open(self.__file_name)
+            file.close()
+            self.read_data()
+        except IOError as e:
+            answer = input('Файл с данными не найден, создать? (y - создать файл, n - работать в памяти, x - выйти')
+            while True:
+                if answer == 'y':
+                    open(self.__file_name, mode='w').close()
+                    break
+                elif answer == 'n':
+                    self.__data_in_file = False
+                    break
+                elif answer == 'x':
+                    print('Выход...')
+                    exit(1)
+                else:
+                    print('Введен не зарегистрированный символ')
+
     def start(self):
+        self.check_storage()
         command = ''
         while command != '9':
             if command == '1':
