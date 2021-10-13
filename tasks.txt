@@ -1,0 +1,6 @@
+сделать с файла users.txt
+файл users.json
+который будет хранить json
+в виде:
+
+[{"name":"Ostap","age":16,"gender:"male"},{"name":"Oleg","age":16,"gender:"male"}, ....]

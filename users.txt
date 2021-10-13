@@ -1,0 +1,7 @@
+Max|18|male
+Kira|21|female
+Olha|30|female
+Oleg|16|male
+Ira|17|female
+Anna|23|female
+Ostap|16|male
