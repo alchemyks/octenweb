@@ -1,0 +1,29 @@
+#Create environment
+python -m venv venv
+#Apply environment venv
+source venv/bin/activate
+#Instal django framework
+pip install django
+#Install mysqlclient
+pip install mysqlclient
+#Install djangorestframework(if needed
+pip install djangorestframework
+#Fixed state environments 
+pip preeze > requirement.txt
+#Create django project
+django-admin startproject <projectName> <path>
+#Create app 
+./manage.py startapp app
+#Create templates folder
+mkdir templates
+#From settings.py append/change
+APPEND_SLASH = False
+'DIRS': [os.path.join(BASE_DIR, 'templates')]
+#Create table django
+./manage.py migrate
+#Search models and create migration file
+./manage.app makemigrations
+#Create table from migrationfile
+./manage.py migrate
+
+
