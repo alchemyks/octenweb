@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from auto_park.models import AutoPark
+from apps.auto_park.models import AutoPark
 
 
 class Car(models.Model):

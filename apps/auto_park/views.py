@@ -1,10 +1,9 @@
-from django.shortcuts import render
-from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView, ListCreateAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, CreateAPIView, ListCreateAPIView
 
 # Create your views here.
-from auto_park.models import AutoPark
-from auto_park.serializers import AutoParkSerializer
-from car.serializers import CarSerializer
+from apps.auto_park.models import AutoPark
+from apps.auto_park.serializers import AutoParkSerializer
+from apps.car.serializers import CarSerializer
 
 
 class AutoParkListView(ListCreateAPIView):

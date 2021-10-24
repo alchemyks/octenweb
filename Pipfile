@@ -7,8 +7,10 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 mysqlclient = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
+isort = "*"
 
 [requires]
 python_version = "3.9"
