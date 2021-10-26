@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'autopark_app_db',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'rootroot',
         'HOST': 'localhost',
         'PORT': '3306',
     }
