@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from .Serializers import UserSerializer
 from .permissions import IsSuperUser
-from ..profile.Serializers import AddAvatarSerializer
+from ..profile.Serializers import AvatarSerializer
 
 UserModel = get_user_model()
 
@@ -31,8 +31,7 @@ class UserToAdminView(GenericAPIView):
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
-        user.is_staff = True
-        user.save()
+        UserModel.objects.to_admin(user)
         data = UserSerializer(user).data
         return Response(data, status.HTTP_200_OK)
 
@@ -43,8 +42,7 @@ class UserDeactivateAdminView(GenericAPIView):
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
-        user.is_staff = False
-        user.save()
+        UserModel.objects.to_user(user)
         data = UserSerializer(user).data
         return Response(data, status.HTTP_200_OK)
 
@@ -85,8 +83,17 @@ class UserDeActivate(GenericAPIView):
         return Response(data, status.HTTP_200_OK)
 
 
-class AddAvatarView(UpdateAPIView):
-    serializer_class = AddAvatarSerializer
+class AddAvatarView(GenericAPIView):
 
-    def get_object(self):
-        return self.request.user.profile
+    def patch(self, *args, **kwargs):
+        avatar_data = self.request.FILES.get('avatar')
+        serializer = AvatarSerializer(data={'url': avatar_data})
+        serializer.is_valid(raise_exception=True)
+        serializer.save(profile=self.request.user.profile)
+        user = UserSerializer(self.request.user).data
+        return Response(user, status.HTTP_200_OK)
+
+
+
+
+
