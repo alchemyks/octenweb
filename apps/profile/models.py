@@ -9,6 +9,7 @@ UserModel = get_user_model()
 class ProfileModel(models.Model):
     class Meta:
         db_table = 'profile'
+        ordering = ('id',)
     
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
@@ -20,6 +21,7 @@ class ProfileModel(models.Model):
 class AvatarModel(models.Model):
     class Meta:
         db_table = 'avatars'
+        ordering = ('id',)
 
     url = models.ImageField(upload_to=AvatarUtils.upload_to)
     profile = models.ForeignKey(ProfileModel, on_delete=models.CASCADE, related_name='avatars')

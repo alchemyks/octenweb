@@ -6,4 +6,5 @@ from django.db import models
 class AutoPark(models.Model):
     class Meta:
         db_table = 'auto_parks'
+        ordering = ('id',)
     name = models.CharField(max_length=20)

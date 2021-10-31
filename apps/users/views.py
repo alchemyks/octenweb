@@ -1,13 +1,13 @@
 from django.contrib.auth import get_user_model
-from rest_framework import status
 
-from rest_framework.generics import ListCreateAPIView, GenericAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
+from rest_framework import status
+from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
-from .Serializers import UserSerializer
-from .permissions import IsSuperUser
 from ..profile.Serializers import AvatarSerializer
+from .permissions import IsSuperUser
+from .Serializers import UserSerializer
 
 UserModel = get_user_model()
 
@@ -23,6 +23,9 @@ class UserListView(ListCreateAPIView):
     def get_queryset(self):
         qs = UserModel.objects.exclude(id=self.request.user.id)
         return qs
+
+    def get_serializer_context(self):
+        return {'request': self.request}
 
 
 class UserToAdminView(GenericAPIView):

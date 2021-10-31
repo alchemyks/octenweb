@@ -1,7 +1,14 @@
 from django.urls import path
 
-from apps.users.views import UserListView, UserRetrieveUpdateDestroy, \
-    UserActivate, UserDeActivate, UserToAdminView, UserDeactivateAdminView, AddAvatarView
+from apps.users.views import (
+    AddAvatarView,
+    UserActivate,
+    UserDeActivate,
+    UserDeactivateAdminView,
+    UserListView,
+    UserRetrieveUpdateDestroy,
+    UserToAdminView,
+)
 
 urlpatterns = [
     path('', UserListView.as_view()),

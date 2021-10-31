@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import ProfileModel, AvatarModel
+from .models import AvatarModel, ProfileModel
 
 
 class AvatarSerializer(ModelSerializer):
