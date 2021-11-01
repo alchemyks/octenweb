@@ -3,7 +3,10 @@ import os
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 
+from rest_framework.request import Request
 from rest_framework.reverse import reverse
+
+from rest_framework_simplejwt.tokens import Token
 
 
 class EmailUtils:
@@ -16,6 +19,6 @@ class EmailUtils:
         msg.send()
 
     @classmethod
-    def register_email(cls, address: str, name:str, token, request) -> None:
+    def register_email(cls, address: str, name: str, token: Token, request: Request) -> None:
         uri = request.build_absolute_uri(reverse('auth_activate', args=(token,)))
         cls._send_mail(address, 'register.html', {'name': name, "url": uri}, 'Register')
