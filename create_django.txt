@@ -27,3 +27,13 @@ APPEND_SLASH = False
 ./manage.py migrate
 
 
+#create pipenv environment
+pipenv shell
+pipenv install django
+pipenv install restframework
+pipenv install mysqlclient
+pipenv install environ
+
+from settings appends APPEND_SLASH = False
+
+pipenv install isort
