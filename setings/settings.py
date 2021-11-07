@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'apps.users',
+    'apps.profile'
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ranting_place_db',
         'USER': 'root',
-        'PASSWORD': 'rootroot',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306'
     }

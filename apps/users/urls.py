@@ -1,4 +1,7 @@
 from django.urls import path
 
-templates = [
+from .views import UserCreateView
+
+urlpatterns = [
+    path('', UserCreateView.as_view()),
 ]
