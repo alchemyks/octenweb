@@ -9,6 +9,7 @@ djangorestframework = "*"
 mysqlclient = "*"
 environ = "*"
 isort = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

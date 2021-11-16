@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-pbs4$jx_ko)w)kukediuzk^__r70y(u4fo6+%opiyw3a5mzk2i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
 
 AUTH_USER_MODEL = 'users.UserModel'
 
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
 
     'apps.users',
     'apps.profile'
@@ -47,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -83,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'driver_app_db',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'rootroot',
         'HOST': 'localhost',
         'PORT': '3306'
     }
