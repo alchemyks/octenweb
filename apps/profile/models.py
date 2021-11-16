@@ -8,6 +8,7 @@ class ProfileModel(models.Model):
     class Meta:
         db_table = 'profile'
 
-    name = models.CharField(max_length=30)
-    surname = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField()
     user = models.OneToOneField(UserModel, on_delete=models.CASCADE, related_name='profile')

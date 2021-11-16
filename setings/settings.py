@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'setings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ranting_place_db',
+        'NAME': 'driver_app_db',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
