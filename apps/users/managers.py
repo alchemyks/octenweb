@@ -10,6 +10,8 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
+
+
     # def create_superuser(self, email, password, **extra_kwargs):
     #     extra_kwargs.setdefault('is_staff', True)
     #     extra_kwargs.setdefault('is_superuser', True)

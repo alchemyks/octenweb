@@ -29,10 +29,8 @@ class UserDeleteUpdate(APIView):
 
     def patch(self, *args, **kwargs):
         pk = kwargs.get('pk')
-        print(pk)
         data = self.request.data
         exist = UserModel.objects.filter(pk=pk).exists()
-        print(exist)
         if not exist:
             return Response('Oops, id is not found', status.HTTP_404_NOT_FOUND)
         user_for_edit = UserModel.objects.get(pk=pk)
